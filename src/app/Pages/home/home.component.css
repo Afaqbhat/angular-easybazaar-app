@@ -1,0 +1,119 @@
+
+ .ngb-carousel {
+    margin-top: 20px;
+  }
+  
+  .picsum-img-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+  }
+  
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #ffffff;
+    padding: 10px;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .carousel-caption p {
+    font-size: 16px;
+  } 
+
+   .product-list-wrapper{
+    overflow-x: hidden;
+  }
+  .product-list-wrapper h1 {
+    font-size:30px;
+    text-align:center;
+     line-height:1.5em;
+      padding-bottom:65px; 
+      margin-top: 75px;
+      font-family:"Playfair Display", 
+      serif; 
+      text-transform:uppercase;
+      letter-spacing: 2px; 
+      color:#111;
+  }
+  
+  
+  .product-list-wrapper h1:before {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 60%;
+    left:50%; margin-left:-30%;
+    height: 1px;
+    content: "";
+    background-color: #777; z-index: 4;
+  }
+  .product-list-wrapper h1:after {
+    position:absolute;
+    width:40px; 
+    height:40px; 
+    left:50%; 
+    margin-left:-20px; 
+    bottom:-50px;
+    content: '\00a7'; 
+    font-size:30px; 
+    line-height:40px; 
+    color:#c50000;
+    font-weight:400; 
+    z-index: 5;
+    display:block;
+    background-color:#f8f8f8;
+  }
+
+  .product-item{
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+}
+
+.product-item img{
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+}
+
+.product-item .product-details {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px;
+}
+
+.product-item .name-head{
+    font-size: 20px;
+    font-weight: 600;
+}
+.product-item h6{
+    text-align: center;
+}
+.product-item .product-footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.product-footer a{
+  text-decoration: none;
+  width: 300px;
+  text-align: center;
+  background-color: #6495ED;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 50%;
+}
+
+.product-footer a:hover{
+  background-color:#2165e4
+}
+   
+
+
+  
+  
+  

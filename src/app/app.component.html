@@ -1,0 +1,47 @@
+
+<mat-toolbar color="primary">
+  <span class="Logo"><img src="../assets/easybazaar-high-resolution-logo-black-on-transparent-background.png" 
+    alt="logo" height="70px" width="90px" routerLink=""></span>
+
+  <div class="spacer"></div>
+
+  <div class="search" *ngIf="menuType !== 'seller'">
+    <input type="text" class="searchTerm" placeholder="What are you looking for?" 
+    (keypress)="searchProduct($event)" (blur)="hideSuggestion()" #searchQuery>
+    <button type="submit" class="searchButton" (click)="searchItem(searchQuery.value)">
+      <fa-icon [icon]="searchIcon"></fa-icon>
+   </button>
+   <ul class="suggested-search" *ngIf="suggestedProducts">
+    <li *ngFor="let item of suggestedProducts">
+      <fa-icon [icon]="searchIcon"></fa-icon>
+      <a (mousedown)="openDetail(item.id)">{{item.name}}</a>
+    </li>
+  </ul>
+ </div>
+ <div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'default'">
+ <a mat-button routerLink="">Home</a>
+    <a mat-button routerLink="seller">Seller</a> 
+    <a mat-button routerLink="user-auth">LogIn</a>
+    <a mat-button>Cart({{cartItems}})</a>
+   </div>
+   <div *ngSwitchCase="'seller'">
+    <a mat-button routerLink="SellerAddProduct"> Add Product</a>
+       <a mat-button routerLink="homeSeller">Product List</a> 
+       <a mat-button (click)="logOut()">LogOut</a>
+       <!-- <a mat-button>{{sellerName | uppercase}}</a> -->
+      </div>
+      <div *ngSwitchCase="'user'">
+        <a mat-button routerLink="">Home</a>
+           <a mat-button routerLink="myOrder">My Order</a> 
+           <a mat-button routerLink="user-auth">{{userName | uppercase}}</a>
+           <a mat-button (click)="userLogout()">LogOut</a>
+           <a mat-button [routerLink]="cartItems>0?'myCart':null">Cart({{cartItems}})</a>  
+  </div>
+  </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>
+ 
+   
+
+ 

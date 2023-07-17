@@ -1,0 +1,44 @@
+<div class="container" *ngIf="!showLogin">
+    <form (ngSubmit)="onSignup(signupUser.value)" #signupUser="ngForm">
+        <div>
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" ngModel required>
+        </div>
+        <div>
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" ngModel required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" ngModel required #email="ngModel" email>
+          <p *ngIf="email.invalid && email.touched" class="validation">Enter valid Email</p>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel required #password="ngModel" minlength="5" maxlength="15">
+          <p *ngIf="password.invalid && password.touched" class="validation">Enter valid Password</p>
+        </div>
+        <button type="submit" [disabled]="!signupUser.valid">Sign Up</button>
+        <a (click)="openLogin()">Already have an Account? Click to Login</a>
+      </form>
+      </div>
+
+        <!-- login form -->
+  <div class="container" *ngIf="showLogin">
+   
+    <form (ngSubmit)="onLogin(loginUser.value)" #loginUser="ngForm">
+        <p class="error">{{loginFailed}}</p>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" ngModel required #email="ngModel" email>
+          <p *ngIf="email.invalid && email.touched" class="validation">Enter valid Email</p>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel required #password="ngModel" minlength="5" [maxlength]="15">
+          <p *ngIf="password.invalid && password.touched" class="validation">Enter valid Password</p>
+        </div>
+        <button type="submit" [disabled]="!loginUser.valid">LogIn</button>
+        <a (click)="openSignup()">Don't have an Account? Click to Signup</a>
+      </form>
+      </div>

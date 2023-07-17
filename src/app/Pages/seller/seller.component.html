@@ -1,0 +1,43 @@
+<!-- signup form -->
+<div class="container" *ngIf="!showLogin">
+<form (ngSubmit)="onSignup(signupForm.value)" #signupForm="ngForm">
+    <div>
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" ngModel required>
+    </div>
+    <div>
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" ngModel required>
+    </div>
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" ngModel required>
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" ngModel required>
+    </div>
+    <button type="submit" [disabled]="!signupForm.valid">Sign Up</button>
+    <a (click)="openLogin()">Already have an Account? Click to Login</a>
+  </form>
+  
+  </div>
+
+  <!-- login form -->
+  <div class="container" *ngIf="showLogin">
+   
+    <form (ngSubmit)="onLogin(loginForm.value)" #loginForm="ngForm">
+        <p class="error">{{loginFailed}}</p>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" ngModel required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" ngModel required>
+        </div>
+        <button type="submit" [disabled]="!loginForm.valid">LogIn</button>
+        <a (click)="openSignup()">Don't have an Account? Click to Signup</a>
+      </form>
+      </div>
+  

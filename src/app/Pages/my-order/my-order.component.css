@@ -1,0 +1,47 @@
+.my-orders {
+    padding: 20px;
+  }
+  
+  .my-orders h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .my-orders .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .my-orders .col-sm-2 {
+    flex: 0 0 16.66%;
+  }
+  
+  .my-orders span {
+    font-size: 16px;
+  }
+  
+  .my-orders .order-img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+  }
+  
+  .my-orders .form-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .my-orders .form-button:hover {
+    background-color: #c82333;
+  }
+  
